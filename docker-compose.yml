@@ -1,0 +1,13 @@
+version: "3.5"
+
+services:
+  aws-cdk:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: aws-cdk
+    tty: true
+    working_dir: /usr/src/app
+    volumes:
+      - ./:/usr/src/app
+      - ./.aws:/root/.aws
